@@ -17,27 +17,27 @@ public class Patient {
     @GeneratedValue
     private Integer id;
 
-    @Schema(description = "Name",
+    @Schema(description = "Name of the patient",
             example = "John Smith", required = true)
     @NotBlank
     @Size(max = 100)
     private String name;
 
     @Schema(description = "Name of the project",
-            example = "Jessica Abigail", required = false)
+            example = "Project P", required = false)
     @NotBlank
     @Size(max = 100)
     private String project;
 
     @Schema(description = "Name of the archive",
-            example = "Jessica Abigail", required = false)
+            example = "Archive A", required = false)
     @NotBlank
     @Size(max = 100)
     private String archive;
 
-    @Schema(description = "Name of the attachment",
-            example = "Jessica Abigail", required = false)
-    @Size(max = 100)
+    @Schema(description = "Name of an attachment",
+            example = "file.ext", required = false)
+    @Size(max = 256)
     private String attachment;
 
     public Integer getId() {
