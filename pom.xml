@@ -9,7 +9,7 @@
         <relativePath/>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <description>Demo for RESTful API created with Spring Boot with OpenAPI documentation.</description>
+    <description>Demo REST API created with Spring Boot and documented with OpenAPI.</description>
     <artifactId>patient-repository-api</artifactId>
 
     <properties>
