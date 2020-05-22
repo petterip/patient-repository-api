@@ -80,6 +80,6 @@ public class PatientController {
     public Patient updatePatient(@RequestBody Patient patient,
                                  @Parameter(description = "Id of the patient record to be updated", required = true)
                                  @PathVariable(name = "patientId") Integer id) {
-        return patientService.replacePatient(id, patient);
+        return patientService.updatePatient(id, patient);
     }
 }

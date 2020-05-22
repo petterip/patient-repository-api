@@ -15,28 +15,23 @@ public class Patient {
     @Id
     @JsonProperty(access = Access.READ_ONLY)
     @GeneratedValue
+//    @Schema(description = "Id of the patient record", required = true)
     private Integer id;
 
-    @Schema(description = "Name of the patient",
-            example = "John Smith", required = true)
+    @Schema(description = "Name of the patient", example = "John Smith", required = true)
     @NotBlank
     @Size(max = 100)
     private String name;
 
-    @Schema(description = "Name of the project",
-            example = "Project P", required = false)
-    @NotBlank
+    @Schema(description = "Name of the project", example = "Project P")
     @Size(max = 100)
     private String project;
 
-    @Schema(description = "Name of the archive",
-            example = "Archive A", required = false)
-    @NotBlank
+    @Schema(description = "Name of the archive", example = "Archive A")
     @Size(max = 100)
     private String archive;
 
-    @Schema(description = "Name of an attachment",
-            example = "file.ext", required = false)
+    @Schema(description = "Name of an attachment", example = "file.ext")
     @Size(max = 256)
     private String attachment;
 

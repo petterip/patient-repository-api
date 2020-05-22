@@ -1,16 +1,16 @@
 package org.repository.patient.exceptions;
 
+import io.swagger.v3.oas.annotations.media.ArraySchema;
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-
 public class ErrorMessage {
 
+    @ArraySchema(schema = @Schema(description = "Constraint violation"))
     private List<String> errors;
-
-    public ErrorMessage() {
-    }
 
     public ErrorMessage(List<String> errors) {
         this.errors = errors;
