@@ -13,9 +13,9 @@ import javax.validation.constraints.Size;
 @Entity
 public class Patient {
     @Id
-    @JsonProperty(access = Access.READ_ONLY)
     @GeneratedValue
-//    @Schema(description = "Id of the patient record", required = true)
+    @JsonProperty(access = Access.READ_ONLY)
+    @Schema(description = "Id of the patient", required = true)
     private Integer id;
 
     @Schema(description = "Name of the patient", example = "John Smith", required = true)
