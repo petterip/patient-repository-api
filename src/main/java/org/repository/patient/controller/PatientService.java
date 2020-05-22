@@ -59,6 +59,7 @@ public class PatientService {
                     patient.setName(updatePatient.getName());
                     patient.setProject(updatePatient.getProject());
                     patient.setArchive(updatePatient.getArchive());
+                    patient.setAttachment(updatePatient.getAttachment());
                     return patientRepository.save(patient);
                 })
                 .orElseGet(() -> {

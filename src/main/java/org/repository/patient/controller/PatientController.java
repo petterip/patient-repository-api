@@ -40,7 +40,7 @@ public class PatientController {
             responses = {
                     @ApiResponse(content = @Content(schema = @Schema(implementation = Patient.class)), responseCode = "200"),
                     @ApiResponse(responseCode = "404", description = "Patient with given id does not exist")})
-    @GetMapping("/{patientId}")
+    @GetMapping(value = "/{patientId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Patient getPatient(@Parameter(description = "Id of the patient record to be fetched", required = true)
                               @PathVariable(name = "patientId") Integer patientId) {
         return patientService.getPatient(patientId);
@@ -53,7 +53,7 @@ public class PatientController {
                     @ApiResponse(content = @Content(schema = @Schema(implementation = Patient.class)),
                             responseCode = "201", description = "Success")})
     @ResponseStatus(code = HttpStatus.CREATED)
-    @PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/add", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Patient postPatient(@RequestBody Patient patient) {
         return patientService.addPatient(patient);
     }
@@ -76,7 +76,7 @@ public class PatientController {
             responses = {
                     @ApiResponse(content = @Content(schema = @Schema(implementation = Patient.class)),
                             responseCode = "201", description = "Success")})
-    @PutMapping(value = "/{patientId}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/{patientId}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Patient updatePatient(@RequestBody Patient patient,
                                  @Parameter(description = "Id of the patient record to be updated", required = true)
                                  @PathVariable(name = "patientId") Integer id) {
